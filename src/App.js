@@ -27,13 +27,18 @@ function App() {
         <Router>
         <Header />
         <div className='container'>
-        <Route exact path="/">
+        <Routes>
+        <Route exact path="/" element={
+            <>
             <FeedbackForm handleAdd={addFeedback} />
             <FeedbackStats feedback={feedback} />
             <FeedbackList feedback ={feedback} handleDelete={deleteFeedback} />
+            </>
+        }>
         </Route>
 
-        <Route path='/about' component={AboutPage} />
+        <Route path='/about' element={<AboutPage />} />
+        </Routes>
         </div>
         </Router>
     )

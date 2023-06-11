@@ -8,6 +8,7 @@ import FeedbackStats from './components/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm';
 import AboutIconLink from './components/AboutIconLink';
 import AboutPage from './pages/AboutPage'
+import { FeedbackProvider } from './context/FeedbackContext';
 
 function App() {
 
@@ -25,10 +26,11 @@ function App() {
     }
 
     return (
+        <FeedbackProvider>
         <Router>
         <Header />
         <div className='container'>
-        <Routes>
+        <Routes> 
         <Route exact path="/" element={
             <>
             <FeedbackForm handleAdd={addFeedback} />
@@ -45,6 +47,7 @@ function App() {
 
         <AboutIconLink />
         </Router>
+        </FeedbackProvider>
     )
 }
 

@@ -6,7 +6,6 @@ function AboutIconLink() {
     <div className='about-link'>
         <Link to={{
             pathname: '/about',
-            search: '?sort=name'
         }}>
         <FaQuestion size={30} />
          </Link>
